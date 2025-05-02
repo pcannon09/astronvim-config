@@ -11,12 +11,8 @@ return {
   { "hrsh7th/cmp-nvim-lsp" },
   { "nvim-treesitter/nvim-treesitter" },
   { "JoosepAlviste/nvim-ts-context-commentstring" },
-  {
-    "luukvbaal/statuscol.nvim",
-    config = function()
-      require("statuscol").setup()
-    end,
-  },
+  { "nvim-lualine/lualine.nvim" },
+  { "luukvbaal/statuscol.nvim" },
     {
     "olimorris/onedarkpro.nvim",
     config = function()
