@@ -2,7 +2,6 @@
 vim.api.nvim_create_user_command("W", function()
     if vim.bo.modified then
         vim.cmd("write")
-        print("Saved")
     end
 end, {})
 
