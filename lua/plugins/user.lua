@@ -38,11 +38,32 @@ return {
 
   -- == Examples of Adding Plugins ==
 
-  "andweeb/presence.nvim",
-  {
-    "ray-x/lsp_signature.nvim",
-    event = "BufRead",
-    config = function() require("lsp_signature").setup() end,
+  -- "andweeb/presence.nvim",
+  -- {
+  --   "ray-x/lsp_signature.nvim",
+  --   event = "BufRead",
+  --   config = function() require("lsp_signature").setup() end,
+  --
+  --   enabled = function()
+  --     -- Check if we're inside ~/repo/aquin
+  --     local cwd = vim.fn.getcwd()
+  --     if cwd:match("^" .. vim.fn.expand("~") .. "/repo/aquin") then
+  --       return false  -- Disable presence for this specific repo
+  --     end
+  --     return true  -- Enable presence for other directories
+  --   end,
+  -- },
+  -- },
+ {
+    "andweeb/presence.nvim",
+    enabled = function()
+      -- Check if we're inside ~/repo/aquin
+      local cwd = vim.fn.getcwd()
+      if cwd:match("^" .. vim.fn.expand("~") .. "/repo/aquin") then
+        return false  -- Disable presence for this specific repo
+      end
+      return true  -- Enable presence for other directories
+    end,
   },
 
   -- == Examples of Overriding Plugins ==

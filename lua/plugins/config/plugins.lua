@@ -1,7 +1,7 @@
 -- Treesitter
 require("nvim-treesitter.configs").setup({
   highlight = { enable = true },
-  indent = { enable = true },
+  -- indent = { enable = true },
   context_commentstring = { enable = true },
   textobjects = {
     select = {
@@ -25,10 +25,10 @@ require("onedarkpro").setup({
         methods = "NONE", -- Style that is applied to methods
         numbers = "NONE", -- Style that is applied to numbers
         strings = "NONE", -- Style that is applied to strings
-        comments = "NONE", -- Style that is applied to comments
-        keywords = "NONE", -- Style that is applied to keywords
+        comments = "italic", -- Style that is applied to comments
+        keywords = "bold", -- Style that is applied to keywords
         constants = "NONE", -- Style that is applied to constants
-        functions = "NONE", -- Style that is applied to functions
+        functions = "bold", -- Style that is applied to functions
         operators = "NONE", -- Style that is applied to operators
         variables = "NONE", -- Style that is applied to variables
         parameters = "NONE", -- Style that is applied to parameters

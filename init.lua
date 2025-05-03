@@ -35,6 +35,8 @@ vim.api.nvim_create_autocmd("VimEnter", {
         require("plugins.config.functions")
         require("plugins.config.theme")
         require("plugins.config.commands")
+
+        vim.cmd(':lua vim.opt.indentexpr = ""')
     end,
 })
 
