@@ -1,16 +1,16 @@
 -- vim.opt.relativenumber = true
 -- vim.opt.wrap = false
 -- vim.opt.scrolloff = 5
--- vim.opt.expandtab = false
 -- vim.opt.termguicolors = true
 -- vim.opt.cursorline = true
 -- vim.opt.signcolumn = "yes"
--- vim.opt.tabstop = 4
--- vim.opt.shiftwidth = 4
--- vim.opt.autoindent = true
+vim.opt.expandtab = false
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.autoindent = true
 --
--- vim.opt.smartindent = false
--- vim.opt.cindent = false
+vim.opt.smartindent = true
+vim.opt.cindent = true
 --
 vim.opt.indentexpr = ""
 

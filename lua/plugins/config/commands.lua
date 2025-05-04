@@ -28,30 +28,24 @@ end, {
   nargs = 1,
 })
 
-vim.keymap.set("n", "c", function()
-  local col = tonumber(vim.fn.getcharstr())
-  -- Keep reading digits if it's a multi-digit column
-  while true do
-    local next_char = vim.fn.getcharstr()
-    if next_char:match("%d") then
-      col = tonumber(tostring(col) .. next_char)
-    else
-      break
-    end
-  end
-  if col > 0 then
-    vim.api.nvim_win_set_cursor(0, {vim.fn.line("."), col - 1})
+vim.keymap.set("n", "0", function()
+  local col_str = ""
+  local char = vim.fn.getcharstr()
 
-  elseif col == 0 then
+  -- Read digits after |
+  while char:match("%d") do
+    col_str = col_str .. char
+    char = vim.fn.getcharstr()
+  end
+
+  local col = tonumber(col_str)
+  if col then
+    vim.api.nvim_win_set_cursor(0, {vim.fn.line("."), col - 1})
+  else
     vim.api.nvim_win_set_cursor(0, {vim.fn.line("."), 0})
 
-  else
-    print("Invalid column number")
   end
-end, {
-    noremap = true
-})
-
+end, { noremap = true})
 
 -- Aliases
 vim.cmd([[
