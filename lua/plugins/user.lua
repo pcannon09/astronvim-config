@@ -60,9 +60,9 @@ return {
       -- Check if we're inside ~/repo/aquin
       local cwd = vim.fn.getcwd()
       if cwd:match("^" .. vim.fn.expand("~") .. "/repo/aquin") then
-        return false  -- Disable presence for this specific repo
+        return false
       end
-      return true  -- Enable presence for other directories
+      return true
     end,
   },
 

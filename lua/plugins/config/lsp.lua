@@ -24,7 +24,7 @@ vim.filetype.add({
 
 lspconfig.clangd.setup {
   filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "tpp" },
-  cmd = { "clangd", "--header-insertion=never", "--compile-commands-dir=build" },
+  cmd = { "clangd", "--header-insertion=never", "--compile-commands-dir=build", "--clang-tidy"},
   root_dir = require("lspconfig.util").root_pattern("compile_commands.json", "CMakeLists.txt", ".git"),
   capabilities = capabilities,
 }
@@ -55,4 +55,6 @@ vim.api.nvim_create_user_command("Diag", function()
     print("No diagnostics for this line")
   end
 end, { nargs = 0 })
+
+-- ~/.config/nvim/lua/plugins/mason.lua return {   {     "williamboman/mason-lspconfig.nvim",     opts = {       ensure_installed = { "cmake" },     },   }, } 
 

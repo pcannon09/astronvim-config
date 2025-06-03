@@ -52,3 +52,16 @@ vim.cmd([[
   cnoreabbrev <expr> w getcmdtype() == ':' && getcmdline() == 'w' ? 'W' : 'w'
 ]])
 
+
+require'nvim-treesitter.configs'.setup {
+  textobjects = {
+    select = {
+      enable = true,
+      lookahead = true,
+      keymaps = {
+        ["af"] = "@function.outer", -- entire function (around function)
+        ["if"] = "@function.inner", -- inside function (just body)
+      },
+    },
+  },
+}
